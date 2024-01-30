@@ -1,0 +1,1 @@
+SELECT min(age) and COUNT(*) FROM etudiant;

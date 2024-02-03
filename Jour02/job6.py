@@ -14,13 +14,13 @@ mydb = mysql.connector.connect(
 
 cursor = mydb.cursor()
 
-salle = cursor.execute("SELECT * FROM salle")
+salle = cursor.execute("SELECT SUM(capacite) FROM salle")
 
 
 results = cursor.fetchall() 
 
     
-print(f"la capacité de toutes les salles est de : {results}")
+print(f"La capacité de toutes les salles est de : {results[0][0]}")
 
 cursor.close()
 mydb.close()

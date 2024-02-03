@@ -27,9 +27,7 @@ class employe:
             self.cursor.execute(sql,values)
             print("Employe Added successfully !")
             self.mydb.commit()
-            self.cursor.close()
-            self.mydb.close()
-        
+                    
         except mysql.connector.Error as e:
             print(f"Error: {e}")
             self.mydb.rollback()
@@ -42,9 +40,7 @@ class employe:
             for i in show_table:
                 print (i)
             self.mydb.commit()
-            self.cursor.close()
-            self.mydb.close()
-        
+                    
         except mysql.connector.Error as e:
             print(f"Error: {e}")
             self.mydb.rollback()
@@ -65,8 +61,7 @@ class employe:
             self.cursor.execute(sql,values)
             self.mydb.commit()
             print("Employe updated successfully")
-            self.cursor.close() 
-            self.mydb.close()  
+              
         
         except mysql.connector.Error as e:
             print(f"Error: {e}")
@@ -84,5 +79,10 @@ class employe:
             print(f"Error: {e}")
             self.mydb.rollback()
 
+    def close_all(self):
+        self.cursor.close()
+        self.mydb.close()
 
 employe_ = employe()
+
+employe_.close_all(self)

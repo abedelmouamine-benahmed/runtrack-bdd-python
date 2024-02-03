@@ -85,4 +85,4 @@ class employe:
 
 employe_ = employe()
 
-employe_.close_all(self)
+employe_.close_all()
